@@ -19,7 +19,6 @@ class App extends Component {
       <div className="App">
         <h1>Hello from the frontend!</h1>
         <h1>{this.state.response.body}</h1>
-        <br/>
       </div>
     );
   }
