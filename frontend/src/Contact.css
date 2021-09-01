@@ -1,0 +1,37 @@
+.contact-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-left, .contact-right {
+    flex-basis: 50%;
+}
+
+.contact-container {
+    width: 70%;
+}
+
+.first-input-group, .second-input-group, .phone-number {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-name, .contact-school, .contact-phone, .contact-email {
+    flex-basis: 47.5%;
+}
+
+.mid-first-space {
+    flex-basis: 5%;
+}
+
+#phone-cc {
+    flex-basis: 20%;
+}
+
+#phone {
+    flex-basis: 75%;
+}
+
+.mid-phone-space {
+    flex-basis: 5%;
+}

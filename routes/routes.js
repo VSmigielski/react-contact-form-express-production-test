@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 var nodemailer = require('nodemailer');
-const creds = require('/config/config');
+const creds = require('../config/config');
 
 var transport = {
     host: 'smtp.gmail.com',
@@ -24,15 +24,18 @@ var transport = {
   
   router.post('/send', (req, res, next) => {
     var name = req.body.name
+    var school = req.body.school
+    var phoneCC = req.body.phoneCC
+    var phone = req.body.phone
     var email = req.body.email
     var message = req.body.message
-    var content = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    var content = `Name: ${name}\nSchool: ${school}\nPhone: +${phoneCC}${phone}\nEmail: ${email}\nMessage: ${message}`
   
     var mail = {
       from: name,
       to: 'nodereactemailtesting@gmail.com',  //Change to email address that you want to receive messages on
       subject: `New Message from ${name}`,
-      text: content
+      text: content,
     }
   
     transporter.sendMail(mail, (err, data) => {
